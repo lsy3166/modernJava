@@ -5,7 +5,7 @@ import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import modernjava.main.ProductMain;
+import modernjava.ProductMain;
 
 @AllArgsConstructor
 @Data

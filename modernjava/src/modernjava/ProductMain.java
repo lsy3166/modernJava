@@ -1,4 +1,4 @@
-package modernjava.main;
+package modernjava;
 
 import static java.util.Comparator.*;
 import static java.util.stream.Collectors.*;

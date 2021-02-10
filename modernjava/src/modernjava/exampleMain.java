@@ -1,4 +1,4 @@
-package modernjava.main;
+package modernjava;
 
 import static java.util.stream.Collectors.*;
 
@@ -13,7 +13,7 @@ import modernjava.cal.impl.DivideCaculation;
 import modernjava.cal.impl.MultiCaculation;
 import modernjava.cal.impl.SubstractCaculation;
 
-public class example1 {
+public class exampleMain {
 
 	public static void main(String[] args) {
 		

@@ -1,4 +1,4 @@
-package modernjava.main;
+package modernjava;
 
 import java.util.ArrayList;
 import java.util.Arrays;
