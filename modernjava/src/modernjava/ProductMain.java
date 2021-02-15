@@ -76,7 +76,9 @@ public class ProductMain {
 		orderedItems.add(new OrderedItem(6L, prodF, 10));
 		
 		Order order = new Order(1L, "Order01", orderedItems);
-		System.out.println("Order Items Total : " + order.total());
+		System.out.println("Order Items Total        : " + order.total());
+		
+		System.out.println("Order Items Reduce Total : " + order.reduceTotal());
 		
 	}
 

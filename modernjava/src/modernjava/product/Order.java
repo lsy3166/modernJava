@@ -12,7 +12,7 @@ import modernjava.ProductMain;
 public class Order {
 	private Long id;
 	private String orderNumber;
-	private List<OrderedItem> oderedItems;
+	private List<OrderedItem> orderedItems;
 	
 	public BigDecimal total() {
 		BigDecimal total = BigDecimal.ZERO;
@@ -20,7 +20,14 @@ public class Order {
 //			total = total.add(orderedItem.orderdPrice());
 //		}
 		
-		total = ProductMain.getTotal(this.oderedItems, orderedItem -> orderedItem.orderdPrice());
+		total = ProductMain.getTotal(this.orderedItems, orderedItem -> orderedItem.orderdPrice());
 		return total;
+	}
+	
+	public BigDecimal reduceTotal( ) {
+		return this.orderedItems.stream()
+						 .map(item -> item.orderdPrice())
+//						 .reduce(BigDecimal.ZERO, (price1, price2) -> price1.add(price2));
+						 .reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 }
