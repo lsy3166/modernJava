@@ -23,19 +23,19 @@ public class exampleMain {
 		
 		CacultatorSevice addcalService = new AddCaculation() ;
 		int addCal = addcalService.caculate(1, 1);
-		System.out.println("µ¡¼À : " + addCal);
+		System.out.println("ë§ì…ˆ : " + addCal);
 		
 		CacultatorSevice substractcalService = new SubstractCaculation() ;
 		int substractCal = substractcalService.caculate(1, 1);
-		System.out.println("»¬¼À : " + substractCal);
+		System.out.println("ëº„ì…ˆ : " + substractCal);
 		
 		CacultatorSevice multicalService = new MultiCaculation() ;
 		int multiCal = multicalService.caculate(1, 1);
-		System.out.println("°ö¼À : " + multiCal);
+		System.out.println("ê³±ì…ˆ : " + multiCal);
 		
 		CacultatorSevice dividecalService = new DivideCaculation() ;
 		int divideCal = dividecalService.caculate(10, 5);
-		System.out.println("³ª´°¼À : " + divideCal);
+		System.out.println("ë‚˜ëˆ—ì…ˆ : " + divideCal);
 		
 		CaculationFunction fcal = new CaculationFunction();
 		int addVal = fcal.fCaculate(1, 2, (n1, n2) -> n1 + n2);

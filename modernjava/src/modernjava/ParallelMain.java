@@ -21,7 +21,7 @@ public class ParallelMain {
 		System.out.println("Stream : " + String.valueOf(System.currentTimeMillis() - start) + "ms");
 		
 		//-----------------------------------------------------------------------------------
-		System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "7"); // ÄÚ¾î °³¼ö ¼ÂÆÃ : 7 => 8ÄÚ¾î, 3 => 4ÄÚ¾î
+		System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism", "7"); // ì½”ì–´ ê°œìˆ˜ ì…‹íŒ… : 7 => 8ì½”ì–´, 3 => 4ì½”ì–´
 		//-----------------------------------------------------------------------------------
 		long start2 = System.currentTimeMillis();
 		Arrays.asList(1,2,3,4,5,6,7,8)

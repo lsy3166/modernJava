@@ -67,7 +67,7 @@ public class StreamMain {
 				  .collect(joining(", ", "{ ", " }"))); 
 		
 		//-----------------------------------------------------------------------------
-		// Integer 127±îÁö´Â Cashed °ª »ç¿ë 
+		// Integer 127ê¹Œì§€ëŠ” Cashed ê°’ ì‚¬ìš© 
 		//-----------------------------------------------------------------------------
 		final Integer integer127 = 127;
 		System.out.println("integer127 : " + Stream.of(1,2,3,4,127).filter(number -> number == integer127).findFirst());
@@ -99,7 +99,7 @@ public class StreamMain {
 					.collect(joining("\n"))
 		);
 		
-		System.out.println("Total ±¸ÇÏ´Â ¹æ¹ý");
+		System.out.println("Total êµ¬í•˜ëŠ” ë°©ë²•");
 		System.out.println("IntStream sum() : " + 
 			IntStream.of(1,2,3,4,5).sum()
 		);
