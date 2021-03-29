@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.function.BiFunction;
 
 import modernjava.cal.CacultatorSevice;
+import modernjava.cal.enums.CaculateEnum;
 import modernjava.cal.impl.AddCaculation;
 import modernjava.cal.impl.CaculationFunction;
 import modernjava.cal.impl.DivideCaculation;
@@ -45,6 +46,17 @@ public class exampleMain {
 		
 		BiFunction<Integer, Integer, Integer> biFunction = (n1, n2) -> n1 * n2;
 		System.out.println("Bi Function : " + biFunction.apply(2, 5));
+		
+		//-------------------------------------------------------------------------------
+		System.out.println("====================== ENUM ================================");
+		int plus = CaculateEnum.PLUS.calcuate(5, 5);
+		int minus = CaculateEnum.MINUS.calcuate(5, 5);
+		int mutiply = CaculateEnum.MUTIPLY.calcuate(5, 5);
+		int divide = CaculateEnum.DIVIDE.calcuate(5, 5);
+		System.out.println("PLUS : " + plus);
+		System.out.println("MINUS : " + minus);
+		System.out.println("MUDIVIDETIPLY : " + mutiply);
+		System.out.println("DIVIDE : " + divide);
 		
 	}
 
