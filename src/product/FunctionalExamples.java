@@ -3,7 +3,9 @@ package product;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -16,11 +18,14 @@ import product.vo.product.Product;
 public class FunctionalExamples {
 	public static void main(String[] args) {
 		Product product1 = new Product(1L, "A", new BigDecimal("10.00"));
-		Product product2 = new Product(1L, "B", new BigDecimal("17.00"));
-		Product product3 = new Product(1L, "C", new BigDecimal("20.00"));
-		Product product4 = new Product(1L, "D", new BigDecimal("37.50"));
-		Product product5 = new Product(1L, "E", new BigDecimal("55.00"));
-		Product product6 = new Product(1L, "F", new BigDecimal("125.60"));
+		Product product2 = new Product(2L, "B", new BigDecimal("17.00"));
+		Product product3 = new Product(3L, "C", new BigDecimal("20.00"));
+		Product product4 = new Product(4L, "D", new BigDecimal("37.50"));
+		Product product5 = new Product(5L, "E", new BigDecimal("55.00"));
+		Product product6 = new Product(6L, "F", new BigDecimal("125.60"));
+		Product product7 = new Product(7L, "G", new BigDecimal("17.00"));
+		Product product8 = new Product(8L, "H", new BigDecimal("55.00"));
+		Product product9 = new Product(9L, "I", new BigDecimal("10.00"));
 		List<Product> products = Arrays.asList(
 			product1
 			,product2
@@ -28,6 +33,28 @@ public class FunctionalExamples {
 			,product4
 			,product5
 			,product6
+			,product7
+			,product8
+			,product9
+		);
+		
+		Set<BigDecimal> sProducts = products.stream()
+										.map(product -> product.getPrice())
+										.collect(Collectors.toSet());
+		
+		List<BigDecimal> lProducts = products.stream()
+										.map(product -> product.getPrice())
+										.collect(Collectors.toList());
+		
+		for (BigDecimal price : sProducts) {
+			lProducts.remove(price);
+		}
+		Set<Product> newProducts = new HashSet<Product>();
+		for (BigDecimal price : lProducts) {
+			newProducts.add(products.stream().filter(product -> product.getPrice().equals(price)).findFirst().get());
+		}
+		System.out.println(
+			"중복 요소 : " + newProducts
 		);
 		
 		System.out.println(
