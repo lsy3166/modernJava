@@ -30,7 +30,7 @@ public class StreamMain {
 		System.out.println(
 			Stream.of(1,2,3,4,5,6,7,8,9,10,4,5,6,7,8)
 			.map(String::valueOf)
-			.collect(Collectors.joining(", ", "<", ">"))
+			.collect(Collectors.joining(", ", "{", "}"))
 		);
 		
 		final Integer int127 = 127;
