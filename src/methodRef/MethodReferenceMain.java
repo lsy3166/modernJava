@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 public class MethodReferenceMain {
 
 	public static void main(String[] args) {
@@ -37,16 +40,11 @@ public class MethodReferenceMain {
 		methodReference02();
 		
 		// 3가지 functional 표현
-		System.out.println("================== 3가지 functional 표현 ====================");
-		List<Function<Integer, String>> funcList = Arrays.asList(
-			i -> String.valueOf(i * 2)
-			, MethodReferenceMain::dobleThenToString
-			, MethodReferenceMain::hashToString
-		);
+		methodReference03();
 		
-		for (Function<Integer, String> func : funcList) {
-			System.out.println(func.apply(7));
-		}
+		// 3가지 Section Class Obj functional 표현 
+		methodReference04();
+
 	}
 	
 	private static void methodReference01() {
@@ -78,6 +76,34 @@ public class MethodReferenceMain {
 	private static Function<Integer, String> getDoubleMethodReference() {
 		return MethodReferenceMain::dobleThenToString ;
 	}
+	
+	private static void methodReference03() {
+		System.out.println("================== 3가지 functional 표현 ====================");
+		List<Function<Integer, String>> funcList = Arrays.asList(
+			i -> String.valueOf(i * 2)
+			, MethodReferenceMain::dobleThenToString
+			, MethodReferenceMain::hashToString
+		);
+		
+		for (Function<Integer, String> func : funcList) {
+			System.out.println(func.apply(7));
+		}
+	}
+	
+	private static void methodReference04() {
+		System.out.println("========= 3가지 Section Class Obj functional 표현 ===========");
+		Section section = new Section(1L);
+		
+		Function<Long, Section> funcWithLambda = i -> new Section(1L);
+		Section sectionWithLambda = funcWithLambda.apply(1L);
+		
+		Function<Long, Section> funcWithMethod = Section::new;
+		Section sectionWithMethod = funcWithMethod.apply(1L);
+		
+		System.out.println(section);
+		System.out.println(sectionWithLambda);
+		System.out.println(sectionWithMethod);
+	}
 
 }
 
@@ -85,4 +111,10 @@ class BigDecimalUtil {
 	public static int compare(BigDecimal bd1, BigDecimal bd2) {
 		return bd2.compareTo(bd1);
 	}
+}
+
+@AllArgsConstructor
+@Data
+class Section {
+	private Long id;
 }
